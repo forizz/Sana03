@@ -18,6 +18,7 @@ for (int i = 0; i < arrSize; i++)
 
 int negativeSum = 0;
 int minElement = 0;
+int indexMaxElement = 0;
 
 
 for (int i = 0; i < arrSize; i++)
@@ -33,5 +34,9 @@ for (int i = 0; i < arrSize; i++)
         minElement = arr[i];
     }
 
+    if (arr[i] > arr[indexMaxElement])
+    {
+        indexMaxElement = i;
+    }
 }
 
