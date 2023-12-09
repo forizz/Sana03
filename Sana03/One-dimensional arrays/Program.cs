@@ -16,3 +16,12 @@ for (int i = 0; i < arrSize; i++)
     Console.Write(arr[i] + " ");
 }
 
+int negativeSum = 0;
+
+for (int i = 0; i < arrSize; i++)
+{
+    if (arr[i] < 0)
+    {
+        negativeSum += arr[i];
+    }
+}
