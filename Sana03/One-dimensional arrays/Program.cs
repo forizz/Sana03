@@ -17,6 +17,8 @@ for (int i = 0; i < arrSize; i++)
 }
 
 int negativeSum = 0;
+int minElement = 0;
+
 
 for (int i = 0; i < arrSize; i++)
 {
@@ -24,4 +26,12 @@ for (int i = 0; i < arrSize; i++)
     {
         negativeSum += arr[i];
     }
+
+    
+    if (arr[i] < minElement)
+    {
+        minElement = arr[i];
+    }
+
 }
+
