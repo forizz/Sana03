@@ -19,6 +19,7 @@ for (int i = 0; i < arrSize; i++)
 int negativeSum = 0;
 int minElement = 0;
 int indexMaxElement = 0;
+int maxAbsElement = 0;
 
 
 for (int i = 0; i < arrSize; i++)
@@ -37,6 +38,12 @@ for (int i = 0; i < arrSize; i++)
     if (arr[i] > arr[indexMaxElement])
     {
         indexMaxElement = i;
+    }
+
+    int absNum = Math.Abs(arr[i]);
+    if(absNum > maxAbsElement)
+    {
+        maxAbsElement = absNum;
     }
 }
 
