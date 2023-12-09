@@ -20,6 +20,7 @@ int negativeSum = 0;
 int minElement = 0;
 int indexMaxElement = 0;
 int maxAbsElement = 0;
+int sumPositiveIndex = 0;
 
 
 for (int i = 0; i < arrSize; i++)
@@ -44,6 +45,11 @@ for (int i = 0; i < arrSize; i++)
     if(absNum > maxAbsElement)
     {
         maxAbsElement = absNum;
+    }
+
+    if (arr[i] > 0)
+    {
+        sumPositiveIndex += i;
     }
 }
 
