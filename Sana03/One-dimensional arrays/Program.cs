@@ -6,21 +6,23 @@ int rangeA = int.Parse(Console.ReadLine());
 Console.WriteLine("Number b: ");
 int rangeB = int.Parse(Console.ReadLine());
 
-int[] arr = new int[arrSize];
+double[] arr = new double[arrSize];
 Random random = new Random();
 
 Console.WriteLine("Generated array:");
 for (int i = 0; i < arrSize; i++)
 {
-    arr[i] = random.Next(rangeA, rangeB);
-    Console.Write(arr[i] + " ");
+    arr[i] =  Math.Round(random.NextDouble() * (rangeA - rangeB) + rangeB, 2);
+    Console.Write($"{arr[i]} | ");
 }
+    Console.WriteLine("\n");
 
-int negativeSum = 0;
-int minElement = 0;
+double negativeSum = 0;
+double minElement = 0;
 int indexMaxElement = 0;
-int maxAbsElement = 0;
-int sumPositiveIndex = 0;
+double maxAbsElement = 0;
+double sumPositiveIndex = 0;
+int countIntegerNums = 0;
 
 
 for (int i = 0; i < arrSize; i++)
@@ -41,7 +43,7 @@ for (int i = 0; i < arrSize; i++)
         indexMaxElement = i;
     }
 
-    int absNum = Math.Abs(arr[i]);
+    double absNum = Math.Abs(arr[i]);
     if(absNum > maxAbsElement)
     {
         maxAbsElement = absNum;
@@ -51,5 +53,17 @@ for (int i = 0; i < arrSize; i++)
     {
         sumPositiveIndex += i;
     }
+
+    if (arr[i] % 1 == 0)
+    {
+        countIntegerNums++;
+    }
+
 }
+    Console.WriteLine($"Sum of negative elements: {negativeSum}");
+    Console.WriteLine($"Minimum element: {minElement}");
+    Console.WriteLine($"Index of the maximum element: {indexMaxElement}");
+    Console.WriteLine($"Maximum absolute element: {maxAbsElement}");
+    Console.WriteLine($"Sum of indexes of positive elements: {sumPositiveIndex}");
+    Console.WriteLine($"Count of integers in the array: {countIntegerNums}");
 
